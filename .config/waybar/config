@@ -8,7 +8,7 @@
     // Module order
     "modules-left": ["wlr/workspaces", "hyprland/window"],
     "modules-center": ["clock", "custom/weather"],
-    "modules-right": ["custom/mpris", "hyprland/language", "tray", "cpu", "temperature", "memory", "pulseaudio", "network", "bluetooth", "backlight", "battery"],
+    "modules-right": ["custom/mpris", "cpu", "temperature", "memory", "pulseaudio", "tray", "backlight", "battery"],
 
     // Module config
     "wlr/workspaces": {
@@ -23,7 +23,8 @@
 
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%a, %d %b, %H:%M}"
+        "format": "{:%a, %d %b, %H:%M}",
+        "on-click": "gsimplecal",
     },
 
     "custom/weather": {
@@ -40,17 +41,6 @@
         "exec": "$HOME/.config/waybar/scripts/mpris.py",
         "return-type": "json",
         "on-click": "playerctl play-pause"
-    },
-
-    "hyprland/language": {
-        "format": "{}",
-        "format-en": "🇬🇧",
-        "format-hu": "🇭🇺",
-      },
-
-    "tray": {
-        "icon-size": 16,
-        "spacing": 6
     },
 
     "cpu": {
@@ -74,6 +64,11 @@
         "min-length": 7
     },
 
+    "tray": {
+        "icon-size": 16,
+        "spacing": 6
+    },
+
     "pulseaudio": {
         "scroll-step": 1,
         "format": "{icon} {volume}% {format_source}",
@@ -94,29 +89,6 @@
         "on-click": "pavucontrol",
         "min-length": 13,
         "ignored-sinks": ["Easy Effects Sink"]
-    },
-
-    "network": {
-        "format": "{ifname}",
-        "format-wifi": " ",
-        "format-ethernet": " ",
-        "format-disconnected": "0",
-        "tooltip-format": "  {ifname} via {gwaddr}",
-        "tooltip-format-wifi": "  {essid} ({signalStrength}%)",
-        "tooltip-format-ethernet": "  {ifname}",
-        "tooltip-format-disconnected": "Disconnected",
-        "on-click": "gnome-control-center network",
-        "max-length": 50
-    },
-
-    "bluetooth": {
-        "format": "",
-        "format-disabled": " off", // an empty format will hide the module
-        "format-connected": " {num_connections}",
-        "tooltip-format": "{controller_alias}\t{controller_address}",
-        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
-        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-        "on-click": "blueman-manager"
     },
 
     "backlight": {
