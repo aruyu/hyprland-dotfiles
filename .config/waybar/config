@@ -1,0 +1,143 @@
+{
+    // General config
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 16,
+
+    // Module order
+    "modules-left": ["wlr/workspaces", "hyprland/window"],
+    "modules-center": ["clock", "custom/weather"],
+    "modules-right": ["custom/mpris", "hyprland/language", "tray", "cpu", "temperature", "memory", "pulseaudio", "network", "bluetooth", "backlight", "battery"],
+
+    // Module config
+    "wlr/workspaces": {
+        "format": "{name}",
+        "on-click": "activate",
+        "sort-by-number": true
+    },
+
+    "hyprland/window": {
+        "max-length": 50
+    },
+
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%a, %d %b, %H:%M}"
+    },
+
+    "custom/weather": {
+        "format": "{}",
+        "tooltip": true,
+        "interval": 600,
+        "exec": "$HOME/.config/waybar/scripts/wttr.py",
+        "return-type": "json"
+    },
+
+    "custom/mpris": {
+        "format": "{}",
+        "tooltip": true,
+        "exec": "$HOME/.config/waybar/scripts/mpris.py",
+        "return-type": "json",
+        "on-click": "playerctl play-pause"
+    },
+
+    "hyprland/language": {
+        "format": "{}",
+        "format-en": "🇬🇧",
+        "format-hu": "🇭🇺",
+      },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 6
+    },
+
+    "cpu": {
+        "format": "{icon}",
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+        "interval": 1,
+        "min-length": 1
+    },
+
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{icon}",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": true
+    },
+
+    "memory": {
+        "format": " {used}G",
+        "interval": 2,
+        "tooltip": false,
+        "min-length": 7
+    },
+
+    "pulseaudio": {
+        "scroll-step": 1,
+        "format": "{icon} {volume}% {format_source}",
+        "format-bluetooth": "{icon}  {volume}% {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "婢 {format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["奄", "奔", "墳"]
+        },
+        "on-click": "pavucontrol",
+        "min-length": 13,
+        "ignored-sinks": ["Easy Effects Sink"]
+    },
+
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": " ",
+        "format-ethernet": " ",
+        "format-disconnected": "0",
+        "tooltip-format": "  {ifname} via {gwaddr}",
+        "tooltip-format-wifi": "  {essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "  {ifname}",
+        "tooltip-format-disconnected": "Disconnected",
+        "on-click": "gnome-control-center network",
+        "max-length": 50
+    },
+
+    "bluetooth": {
+        "format": "",
+        "format-disabled": " off", // an empty format will hide the module
+        "format-connected": " {num_connections}",
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "on-click": "blueman-manager"
+    },
+
+    "backlight": {
+        "min-length": 2,
+        "device": "intel_backlight",
+        "format": "{icon}",
+        "format-icons": ["","","","", "", "", ""],
+        "on-scroll-up": "light -A 5",
+        "on-scroll-down": "light -U 5"
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{icon} {time}",
+        "format-icons": [" ", " ", " ", " ", " "],
+        "interval": 2
+    },
+}

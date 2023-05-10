@@ -1,0 +1,75 @@
+* {
+  border: none;
+  border-radius: 5;
+
+  font-family: JetBrainsMono Nerd Font, monospace;
+  font-weight: bold;
+  font-size: 11px;
+
+  min-height: 0;
+}
+
+window#waybar {
+  background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .25), transparent);
+  color: white;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+#workspaces button {
+  color: white;
+}
+
+#workspaces button:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+#workspaces button.active {
+  border-top: 2px solid white;
+}
+
+#temperature {
+  transition: background linear .25s;
+}
+
+#temperature.critical {
+  background: linear-gradient(rgba(255, 16, 77, .6), rgba(255, 77, 75, .25), rgba(255, 77, 75, 0));
+}
+
+#pulseaudio {
+  transition: background linear .25s;
+}
+
+#pulseaudio.muted {
+  background: linear-gradient(rgba(255, 16, 16, .6), rgba(255, 16, 16, .25), rgba(255, 16, 16, 0));
+}
+
+#battery {
+  padding: 0 1rem;
+  transition: background linear .25s;
+}
+
+#battery.charging {
+  background: linear-gradient(rgba(18, 200, 71, .6), rgba(18, 200, 71, .25), rgba(18, 200, 71, 0));
+}
+
+#battery.warning:not(.charging) {
+  background: linear-gradient(rgba(213, 142, 29, .6), rgba(213, 142, 29, .25), rgba(213, 142, 29, 0));
+}
+
+@keyframes blink {
+  to {
+    background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .25), transparent);
+  }
+}
+
+#battery.critical:not(.charging) {
+  background: linear-gradient(rgba(255, 16, 16, .6), rgba(255, 16, 16, .25), rgba(255, 16, 16, 0));
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
