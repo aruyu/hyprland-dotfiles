@@ -36,14 +36,15 @@ bash ~/Documents/hyprland-dotfiles/tools/install_zsh.sh
 #### Clone the repository to *'~/.config'* directly.
 
 ```bash
-git clone https://github.com/aruyu/hyprland-dotfiles.git ~/.config
+git clone https://github.com/aruyu/hyprland-dotfiles.git ~/Downloads/hyprland-dotfiles/
+cp -rf ~/Downloads/hyprland-dotfiles/.* ~/
 ```
 
 > Run *'install.sh'* to install essentials.
 
 ```bash
-bash ~/.config/tools/install_themes.sh
-bash ~/.config/tools/install_zsh.sh
+bash ~/Downloads/hyprland-dotfiles/tools/install_themes.sh
+bash ~/Downloads/hyprland-dotfiles/tools/install_zsh.sh
 ```
 
 </details>
