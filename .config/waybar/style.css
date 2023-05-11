@@ -2,9 +2,8 @@
   border: none;
   border-radius: 5;
 
-  font-family: JetBrainsMono Nerd Font, monospace;
-  font-weight: bold;
-  font-size: 11px;
+  font-family: Cantarell, monospace;
+  font-size: 12px;
 
   min-height: 0;
 }
@@ -72,4 +71,9 @@ window#waybar.hidden {
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+}
+
+#custom-powermenu {
+  transition: background linear .25s;
+  background: linear-gradient(rgba(191, 97, 106, .9), rgba(191, 97, 106, .35), rgba(191, 97, 106, 0));
 }

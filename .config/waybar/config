@@ -8,7 +8,7 @@
     // Module order
     "modules-left": ["wlr/workspaces", "hyprland/window"],
     "modules-center": ["clock", "custom/weather"],
-    "modules-right": ["custom/mpris", "cpu", "temperature", "memory", "pulseaudio", "tray", "backlight", "battery"],
+    "modules-right": ["custom/mpris", "cpu", "temperature", "memory", "pulseaudio", "tray", "backlight", "battery", "custom/powermenu"],
 
     // Module config
     "wlr/workspaces": {
@@ -23,7 +23,7 @@
 
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%a, %d %b, %H:%M}",
+        "format": "{:%d %b %Y, %H:%M}",
         "on-click": "gsimplecal",
     },
 
@@ -64,11 +64,6 @@
         "min-length": 7
     },
 
-    "tray": {
-        "icon-size": 16,
-        "spacing": 6
-    },
-
     "pulseaudio": {
         "scroll-step": 1,
         "format": "{icon} {volume}% {format_source}",
@@ -87,8 +82,13 @@
             "default": ["奄", "奔", "墳"]
         },
         "on-click": "pavucontrol",
-        "min-length": 13,
+        "min-length": 10,
         "ignored-sinks": ["Easy Effects Sink"]
+    },
+
+    "tray": {
+        "icon-size": 14,
+        "spacing": 4
     },
 
     "backlight": {
@@ -97,7 +97,8 @@
         "format": "{icon}",
         "format-icons": ["","","","", "", "", ""],
         "on-scroll-up": "light -A 5",
-        "on-scroll-down": "light -U 5"
+        "on-scroll-down": "light -U 5",
+        "tooltip": false
     },
 
     "battery": {
@@ -111,5 +112,12 @@
         "format-alt": "{icon} {time}",
         "format-icons": [" ", " ", " ", " ", " "],
         "interval": 2
+    },
+
+    "custom/powermenu": {
+        "min-length": 5,
+        "on-click": "nwgbar",
+        "format": "⏻",
+        "tooltip": false
     },
 }
