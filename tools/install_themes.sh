@@ -52,15 +52,6 @@ if [[ $EUID -eq 0 ]]; then
 fi
 
 
-##======================
-#-- Cursor
-git clone https://github.com/varlesh/oreo-cursors.git $HOME/Documents/oreo-cursors/
-cd $HOME/Documents/oreo-cursors/
-ruby generator/convert.rb || error_exit "Installation Faild... ruby needed."
-make build
-sudo make install
-
-
 ##-----------------
 mkdir $HOME/.themes
 

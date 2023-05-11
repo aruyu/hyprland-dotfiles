@@ -114,4 +114,4 @@ alias vi='nvim'
 alias lg='lazygit'
 
 # startswith Neofetch
-#neofetch
+neofetch
