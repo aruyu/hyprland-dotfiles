@@ -96,8 +96,8 @@
         "device": "intel_backlight",
         "format": "{icon}",
         "format-icons": ["","","","", "", "", ""],
-        "on-scroll-up": "light -A 5",
-        "on-scroll-down": "light -U 5",
+        "on-scroll-up": "brightnessctl s +5%",
+        "on-scroll-down": "brightnessctl s 5%-",
         "tooltip": false
     },
 
