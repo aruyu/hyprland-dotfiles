@@ -7,8 +7,15 @@
 
     // Module order
     "modules-left": ["wlr/workspaces", "hyprland/window"],
-    "modules-center": ["clock", "custom/weather"],
-    "modules-right": ["custom/mpris", "cpu", "temperature", "memory", "pulseaudio", "tray", "backlight", "battery", "custom/powermenu"],
+    "modules-center": ["clock", "custom/launcher"],
+    "modules-right": ["cpu", "temperature", "memory", "pulseaudio", "tray", "backlight", "battery", "custom/powermenu"],
+
+    "custom/launcher": {
+        "min-length": 2,
+        "on-click": "nwggrid -o 0.6",
+        "format": "異",
+        "tooltip": false
+    },
 
     // Module config
     "wlr/workspaces": {
@@ -116,7 +123,7 @@
 
     "custom/powermenu": {
         "min-length": 5,
-        "on-click": "nwgbar",
+        "on-click": "nwgbar -o 0.6",
         "format": "⏻",
         "tooltip": false
     },
