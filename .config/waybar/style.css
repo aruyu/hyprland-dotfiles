@@ -1,71 +1,181 @@
 * {
   border: none;
-  border-radius: 5;
-
+  border-radius: 0;
   font-family: Cantarell, monospace;
+  font-weight: bold;
   font-size: 12px;
-
   min-height: 0;
 }
 
 window#waybar {
-  background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .25), transparent);
-  color: white;
+  background: rgba(21, 18, 27, 0);
+  color: #cdd6f4;
 }
 
-window#waybar.hidden {
-  opacity: 0.2;
+tooltip {
+  background: #1e1e2e;
+  border-radius: 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #11111b;
 }
+
 
 #workspaces button {
-  color: white;
+  padding: 5px;
+  border-radius: 10px;
+  margin-right: 0px;
+}
+
+#workspaces button.active {
+  background: rgba(191, 97, 106, .9);
+  border-radius: 10px;
+}
+
+#workspaces button.focused {
+  background: #eba0ac;
+  border-radius: 10px;
+}
+
+#workspaces button.urgent {
+  background: #a6e3a1;
+  border-radius: 10px;
 }
 
 #workspaces button:hover {
   background: rgba(255, 255, 255, 0.35);
+  border-radius: 10px;
 }
 
-#workspaces button.active {
-  border-top: 2px solid white;
+
+#custom-launcher,
+#custom-updates,
+#custom-weather,
+#workspaces,
+#window,
+#cpu,
+#temperature,
+#memory,
+#tray,
+#pulseaudio,
+#backlight,
+#battery,
+#clock,
+#custom-powermenu {
+  background: rgba(21, 18, 27, .6);
+  padding: 0px 5px;
+  margin: 0px 0px;
+  margin-top: 5px;
+  border: 1px rgba(21, 18, 27, .6);
 }
 
-#temperature {
-  transition: background linear .25s;
+#custom-launcher {
+  background: rgba(191, 97, 106, .9);
+  border-radius: 10px;
+  border-right: 0px;
+  margin-left: 6px;
+  margin-right: 4px;
+}
+
+#custom-updates {
+  color: rgba(21, 18, 27, .6);
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  border-left: 0px;
+  border-right: 0px;
+  margin-right: 4px;
+}
+
+#custom-weather {
+  color: rgba(21, 18, 27, .6);
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  border-left: 0px;
+  border-right: 0px;
+  margin-right: 4px;
+}
+
+#workspaces {
+  border-radius: 10px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+#window {
+  border-radius: 10px;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+#cpu {
+  border-radius: 10px 0px 0px 10px;
+  border-left: 0px;
+  border-right: 0px;
 }
 
 #temperature.critical {
-  background: linear-gradient(rgba(255, 16, 77, .6), rgba(255, 77, 75, .25), rgba(255, 77, 75, 0));
+  color: rgba(255, 16, 16, .6);
+}
+
+#memory {
+  border-radius: 0px 10px 10px 0px;
+  border-left: 0px;
+  border-right: 0px;
+  margin-right: 4px;
+}
+
+#tray {
+  border-radius: 10px 0px 0px 10px;
+  border-left: 0px;
+  border-right: 0px;
 }
 
 #pulseaudio {
-  transition: background linear .25s;
+  border-radius: 0px 10px 10px 0px;
+  border-left: 0px;
+  border-right: 0px;
+  margin-right: 4px;
 }
 
 #pulseaudio.muted {
-  background: linear-gradient(rgba(255, 16, 16, .6), rgba(255, 16, 16, .25), rgba(255, 16, 16, 0));
+  color: rgba(21, 18, 27, .6);
+  background: rgba(191, 97, 106, .9);
+}
+
+#pulseaudio.microphone {
+  border-radius: 0px 10px 10px 0px;
+  border-left: 0px;
+  border-right: 0px;
+  margin-right: 4px;
+}
+
+#pulseaudio.microphone.muted {
+  color: rgba(21, 18, 27, .6);
+  background: rgba(191, 97, 106, .9);
+}
+
+#backlight {
+  border-radius: 10px 0px 0px 10px;
+  border-left: 0px;
+  border-right: 0px;
 }
 
 #battery {
-  padding: 0 1rem;
-  transition: background linear .25s;
+  border-radius: 0px 10px 10px 0px;
+  border-left: 0px;
+  margin-right: 4px;
 }
 
 #battery.charging {
-  background: linear-gradient(rgba(18, 200, 71, .6), rgba(18, 200, 71, .25), rgba(18, 200, 71, 0));
+  color: rgba(18, 200, 71, .6);
 }
 
 #battery.warning:not(.charging) {
-  background: linear-gradient(rgba(213, 142, 29, .6), rgba(213, 142, 29, .25), rgba(213, 142, 29, 0));
-}
-
-@keyframes blink {
-  to {
-    background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .25), transparent);
-  }
+  color: rgba(213, 142, 29, .6);
 }
 
 #battery.critical:not(.charging) {
-  background: linear-gradient(rgba(255, 16, 16, .6), rgba(255, 16, 16, .25), rgba(255, 16, 16, 0));
+  color: rgba(255, 16, 16, .6);
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: ease-in-out;
@@ -73,7 +183,18 @@ window#waybar.hidden {
   animation-direction: alternate;
 }
 
+#clock {
+  color: rgba(21, 18, 27, .6);
+  background: #fab387;
+  border-radius: 10px;
+  border-right: 0px;
+  margin-right: 4px;
+}
+
 #custom-powermenu {
-  transition: background linear .25s;
-  background: linear-gradient(rgba(191, 97, 106, .9), rgba(191, 97, 106, .35), rgba(191, 97, 106, 0));
+  background: rgba(191, 97, 106, .9);
+  border-radius: 10px;
+  border-left: 0px;
+  border-right: 0px;
+  margin-right: 6px;
 }
