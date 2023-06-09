@@ -1,6 +1,42 @@
-# hyprland-dotfiles
+# Hyprland Dotfiles
+
+![Jun09_092758](https://github.com/aruyu/hyprland-dotfiles/assets/75081360/196d31e2-38e2-4619-a507-13813595fc3b)
+
+![Jun09_093933](https://github.com/aruyu/hyprland-dotfiles/assets/75081360/f5162bc5-5587-4668-832b-98635a1541b6)
 
 Custom dotfiles for Hyprland WM for wayland with ZSH.
+
+## Dependency
+
+**Required packages for WM**
+
+```
+hyprland swaybg swaylock swayidle dunst wofi
+```
+
+**Required packages for others**
+
+```
+pulseaudio pulseaudio-alsa pulseaudio-bluetooth mpd brightnessctl
+```
+
+**System apps (Highly necessary)**
+
+```
+network-manager-applet blueman pavucontrol ibus ibus-libpinyin ibus-hangul grim slurp gsimplecal
+nautilus nautilus-share file-roller gvfs gvfs-afc gvfs-goa gvfs-google gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb
+```
+
+**User apps (Not necessary)**
+
+```
+chromium firefox foot libreoffice-still gimp inkscape rnote
+htop neofetch qalculate-gtk mpv mpc ncmpcpp viewnior copyq
+```
+
+Alternatively, you can checkout my *'install_wayland.sh'* script.
+
+> https://github.com/aruyu/arch-configs/blob/master/tools/install_wayland.sh
 
 ## Installation
 
