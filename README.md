@@ -14,6 +14,10 @@ Custom dotfiles for Hyprland WM for wayland with ZSH.
 hyprland swaybg swaylock swayidle dunst wofi
 ```
 
+```
+AUR: waybar-hyprland-git nwg-launchers nwg-look
+```
+
 **Required packages for others**
 
 ```
@@ -23,8 +27,12 @@ pulseaudio pulseaudio-alsa pulseaudio-bluetooth mpd brightnessctl
 **System apps (Highly necessary)**
 
 ```
-network-manager-applet blueman pavucontrol ibus ibus-libpinyin ibus-hangul grim slurp gsimplecal
+network-manager-applet blueman pavucontrol ibus ibus-libpinyin grim slurp gsimplecal papirus-icon-theme
 nautilus nautilus-share file-roller gvfs gvfs-afc gvfs-goa gvfs-google gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb
+```
+
+```
+AUR: catppuccin-cursors-frappe wayout-git wdisplays
 ```
 
 **User apps (Not necessary)**
@@ -36,7 +44,7 @@ htop neofetch qalculate-gtk mpv mpc ncmpcpp viewnior copyq
 
 Alternatively, you can checkout my *'install_wayland.sh'* script.
 
-> https://github.com/aruyu/arch-configs/blob/master/tools/install_wayland.sh
+* https://github.com/aruyu/arch-configs/blob/master/tools/install_wayland.sh
 
 ## Installation
 
