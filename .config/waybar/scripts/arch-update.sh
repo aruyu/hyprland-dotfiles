@@ -15,7 +15,7 @@ update_count=$(echo "${update}" | wc -l)
 
 if [[ ! -z "${update}" ]]; then
   echo " ${update_count}"
-  echo "${update}" | column -t | tr '\n' '\r'
+  echo -ne "Updates:\n${update}" | column -t | tr '\n' '\r'
   notify-send "Pending updates" "<i>${update}</i>" --icon="distributor-logo-archlinux"
 fi
 
